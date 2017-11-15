@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  var chain = function(e, i) {
+    i = i || 0;
+    $(e[i]).fadeIn(2000, function() {
+      chain(e, i+1);
+    });
+  };
+  chain($('.agenda li'));
+});</script>
+<style>
+.agenda li {
+  display: none;
+}
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+<ul class="agenda">
+  <li>うどんはじめました。</li>
+  <li>冷やし中華もはじめました。</li>
+  <li>もりそばもはじめました。</li>
+  <li>国破れてサンガリア</li>
+</ul>
+</body>
+</html>

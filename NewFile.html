@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("p").css( "color", "red" );
+	$('.semooh').hover(
+		function(){ $(this).text('ヌ？'); },
+		function(){ $(this).text('ヌー'); }
+	);
+
+	var obj = {
+			click:		'クリック',
+			dblclick:	'ダブルクリック',
+			mousedown:	'ボタンが押',
+			mouseup:	'ボタンが放'
+	};
+
+	$.each(obj, function(key, value){
+		$('#square')[key](function() {
+			$('<p>', {text: value + 'されました'}).appendTo('#square');
+		});
+	});
+});
+</script>
+<style>
+  body {
+    background: #eeeeee;
+  }
+  #square	{ width: 200px; padding: 5px; border: 1px dashed black; }
+  #suqre p	{ margin:3px 0; }
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+<div id="square">
+	<h4>イベント処理を実行</h4>
+	<p class="warning">test</p>
+	<p class="semooh">test</p>
+</div>
+</body>
+</html>
